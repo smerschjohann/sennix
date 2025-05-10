@@ -49,4 +49,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           TAG_NAME=${GITHUB_REF##*/}
-          gh release create ${TAG_NAME} app/build/outputs/apk/release/sennix-${TAG_NAME}.apk --title "${TAG_NAME}" --notes "Release ${TAG_NAME}"
+          gh release upload ${TAG_NAME} app/build/outputs/apk/release/sennix-${TAG_NAME}.apk --clobber
